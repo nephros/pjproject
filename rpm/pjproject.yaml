@@ -1,0 +1,18 @@
+Name: pjproject
+Summary: A multimedia communication library implementing standard based protocols such as SIP, SDP, RTP, STUN, TURN, and ICE
+Version: 2.11.1
+Group: Development/Libraries
+URL: https://www.pjsip.org/
+SCM: https://github.com/pjsip/pjproject
+License: GPLv2
+Sources:
+    - '%{name}-%{version}.tar.gz'
+#Requires:
+#    - ^^^
+#PkgBR:
+#    - ^^^
+#PkgConfigBR:
+#    - ^^^
+SutoSubPackages:
+    - devel
+    - docs
