@@ -9,10 +9,21 @@ Sources:
     - '%{name}-%{version}.tar.gz'
 #Requires:
 #    - ^^^
-#PkgBR:
-#    - ^^^
+PkgBR:
+    - opus-devel
 PkgConfigBR:
-    - libcrypto
-SutoSubPackages:
+    - speex
+    - speexdsp
+    - openssl
+SetupOptions: '-q -n %{name}-%{version}/upstream'
+ConfigOptions:
+    - '--enable-shared'
+    - '--disable-video'
+    - '--enable-opus'
+    - '--enable-speex'
+    - '--enable-ssl'
+    - 'CFLAGS="$CFLAGS -DNDEBUG=1"'
+    - 'CFLAGS="$CFLAGS -DPJ_HAS_IPV6=1"'
+Builder: none
+AutoSubPackages:
     - devel
-    - docs

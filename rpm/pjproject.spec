@@ -16,37 +16,75 @@ License:    GPLv2
 URL:        https://www.pjsip.org/
 Source0:    %{name}-%{version}.tar.gz
 Source100:  pjproject.yaml
-BuildRequires:  pkgconfig(libcrypto)
+Requires(post): /sbin/ldconfig
+Requires(postun): /sbin/ldconfig
+BuildRequires:  pkgconfig(speex)
+BuildRequires:  pkgconfig(speexdsp)
+BuildRequires:  pkgconfig(openssl)
+BuildRequires:  opus-devel
 
 %description
 %{summary}.
 
+%package devel
+Summary:    Development files for %{name}
+Group:      Development/Libraries
+Requires:   %{name} = %{version}-%{release}
+
+%description devel
+Development files for %{name}.
+
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-%{version}/upstream
 
 # >> setup
 # << setup
 
 %build
 # >> build pre
+#rm -f configure
+#mv aconfigure.ac configure.ac
+#autoreconf
 # << build pre
 
-%configure --disable-static
-make %{?_smp_mflags}
+%configure --disable-static \
+    --enable-shared \
+    --disable-video \
+    --enable-opus \
+    --enable-speex \
+    --enable-ssl \
+    CFLAGS="$CFLAGS -DNDEBUG=1" \
+    CFLAGS="$CFLAGS -DPJ_HAS_IPV6=1"
+
 
 # >> build post
+make %{?_smp_mflags} dep
+make %{?_smp_mflags} all
 # << build post
 
 %install
 rm -rf %{buildroot}
 # >> install pre
 # << install pre
-%make_install
 
 # >> install post
+%make_install
 # << install post
+
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(-,root,root,-)
 # >> files
+%{_libdir}/*.so.*
 # << files
+
+%files devel
+%defattr(-,root,root,-)
+# >> files devel
+%{_includedir}/*
+%{_libdir}/*.so
+%{_libdir}/pkgconfig/*.pc
+# << files devel
