@@ -11,8 +11,8 @@ Sources:
 #    - ^^^
 #PkgBR:
 #    - ^^^
-#PkgConfigBR:
-#    - ^^^
+PkgConfigBR:
+    - libcrypto
 SutoSubPackages:
     - devel
     - docs

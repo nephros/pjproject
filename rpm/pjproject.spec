@@ -16,6 +16,7 @@ License:    GPLv2
 URL:        https://www.pjsip.org/
 Source0:    %{name}-%{version}.tar.gz
 Source100:  pjproject.yaml
+BuildRequires:  pkgconfig(libcrypto)
 
 %description
 %{summary}.
