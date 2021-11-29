@@ -11,6 +11,7 @@ Sources:
 #    - ^^^
 PkgBR:
     - opus-devel
+    - libsrtp-devel
 PkgConfigBR:
     - speex
     - speexdsp
@@ -19,9 +20,13 @@ SetupOptions: '-q -n %{name}-%{version}/upstream'
 ConfigOptions:
     - '--enable-shared'
     - '--disable-video'
-    - '--enable-opus'
-    - '--enable-speex'
     - '--enable-ssl'
+    - '--enable-opus'
+    # disable because of conflicts with the system versions
+    # '--enable-speex'
+    - '--with-external-speex'
+    - '--with-external-srtp'
+    # '--with-external-webrtc'
     - 'CFLAGS="$CFLAGS -DNDEBUG=1"'
     - 'CFLAGS="$CFLAGS -DPJ_HAS_IPV6=1"'
 Builder: none

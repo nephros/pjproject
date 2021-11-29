@@ -22,6 +22,7 @@ BuildRequires:  pkgconfig(speex)
 BuildRequires:  pkgconfig(speexdsp)
 BuildRequires:  pkgconfig(openssl)
 BuildRequires:  opus-devel
+BuildRequires:  libsrtp-devel
 
 %description
 %{summary}.
@@ -50,9 +51,10 @@ Development files for %{name}.
 %configure --disable-static \
     --enable-shared \
     --disable-video \
-    --enable-opus \
-    --enable-speex \
     --enable-ssl \
+    --enable-opus \
+    --with-external-speex \
+    --with-external-srtp \
     CFLAGS="$CFLAGS -DNDEBUG=1" \
     CFLAGS="$CFLAGS -DPJ_HAS_IPV6=1"
 
