@@ -22,7 +22,6 @@ BuildRequires:  pkgconfig(speex)
 BuildRequires:  pkgconfig(speexdsp)
 BuildRequires:  pkgconfig(openssl)
 BuildRequires:  opus-devel
-BuildRequires:  libsrtp-devel
 
 %description
 %{summary}.

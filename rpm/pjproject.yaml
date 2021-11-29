@@ -11,7 +11,8 @@ Sources:
 #    - ^^^
 PkgBR:
     - opus-devel
-    - libsrtp-devel
+    # should be enabled, but OBS get stuck in "downloading dod"
+    # libsrtp-devel
 PkgConfigBR:
     - speex
     - speexdsp
