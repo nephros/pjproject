@@ -26,8 +26,9 @@ ConfigOptions:
     # disable because of conflicts with the system versions
     # '--enable-speex'
     - '--with-external-speex'
-    - '--with-external-srtp'
+    # '--with-external-srtp'
     # '--with-external-webrtc'
+    - '--disable-libwebrtc'
     - 'CFLAGS="$CFLAGS -DNDEBUG=1"'
     - 'CFLAGS="$CFLAGS -DPJ_HAS_IPV6=1"'
 Builder: none

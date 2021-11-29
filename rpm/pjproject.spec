@@ -53,7 +53,7 @@ Development files for %{name}.
     --enable-ssl \
     --enable-opus \
     --with-external-speex \
-    --with-external-srtp \
+    --disable-libwebrtc \
     CFLAGS="$CFLAGS -DNDEBUG=1" \
     CFLAGS="$CFLAGS -DPJ_HAS_IPV6=1"
 
