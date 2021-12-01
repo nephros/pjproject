@@ -54,7 +54,6 @@ Development files for %{name}.
 
 %configure --disable-static \
     --enable-shared \
-    --disable-video \
     --enable-ssl \
     --enable-opus \
     --enable-libsamplerate \

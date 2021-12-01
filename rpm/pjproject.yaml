@@ -25,7 +25,7 @@ PkgConfigBR:
 SetupOptions: '-q -n %{name}-%{version}/upstream'
 ConfigOptions:
     - '--enable-shared'
-    - '--disable-video'
+    # '--disable-video'
     - '--enable-ssl'
     - '--enable-opus'
     - '--enable-libsamplerate'
