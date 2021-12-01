@@ -58,7 +58,7 @@ Development files for %{name}.
     --enable-ssl \
     --enable-opus \
     --enable-libsamplerate \
-    --enable-resample \
+    --disable-resample \
     --with-external-speex \
     --disable-libwebrtc \
     CFLAGS="$CFLAGS -DNDEBUG=1" \

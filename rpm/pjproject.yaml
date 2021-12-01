@@ -29,7 +29,9 @@ ConfigOptions:
     - '--enable-ssl'
     - '--enable-opus'
     - '--enable-libsamplerate'
-    - '--enable-resample'
+    # '--enable-resample-dll'
+    # '--enable-resample'
+    - '--disable-resample'
     # disable because of conflicts with the system versions
     # '--enable-speex'
     - '--with-external-speex'
