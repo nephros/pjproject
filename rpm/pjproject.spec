@@ -21,6 +21,8 @@ Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(speex)
 BuildRequires:  pkgconfig(speexdsp)
 BuildRequires:  pkgconfig(openssl)
+BuildRequires:  pkgconfig(libresample)
+BuildRequires:  pkgconfig(samplerate)
 BuildRequires:  opus-devel
 
 %description
@@ -52,6 +54,8 @@ Development files for %{name}.
     --disable-video \
     --enable-ssl \
     --enable-opus \
+    --enable-libsamplerate \
+    --enable-resample \
     --with-external-speex \
     --disable-libwebrtc \
     CFLAGS="$CFLAGS -DNDEBUG=1" \

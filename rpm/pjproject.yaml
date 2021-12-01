@@ -17,12 +17,16 @@ PkgConfigBR:
     - speex
     - speexdsp
     - openssl
+    - libresample
+    - samplerate
 SetupOptions: '-q -n %{name}-%{version}/upstream'
 ConfigOptions:
     - '--enable-shared'
     - '--disable-video'
     - '--enable-ssl'
     - '--enable-opus'
+    - '--enable-libsamplerate'
+    - '--enable-resample'
     # disable because of conflicts with the system versions
     # '--enable-speex'
     - '--with-external-speex'
