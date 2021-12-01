@@ -67,7 +67,7 @@ Development files for %{name}.
 
 # >> build post
 make %{?_smp_mflags} dep
-make %{?_smp_mflags} all
+make %{?_smp_mflags} lib
 # << build post
 
 %install
