@@ -13,7 +13,7 @@ Version:    2.11.1
 Release:    1
 Group:      Development/Libraries
 License:    GPLv2
-URL:        https://www.pjsip.org/
+URL:        https://github.com/savoirfairelinux/pjproject
 Source0:    %{name}-%{version}.tar.gz
 Source100:  pjproject.yaml
 Requires(post): /sbin/ldconfig
