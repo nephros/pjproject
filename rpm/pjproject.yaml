@@ -7,6 +7,9 @@ SCM: https://github.com/savoirfairelinux/pjproject
 License: GPLv2
 Sources:
     - '%{name}-%{version}.tar.gz'
+Patches:
+    # from jami-daemon/config/src/pjproject
+    - 0009-add-config-site.patch
 #Requires:
 #    - ^^^
 PkgBR:

@@ -16,6 +16,7 @@ License:    GPLv2
 URL:        https://github.com/savoirfairelinux/pjproject
 Source0:    %{name}-%{version}.tar.gz
 Source100:  pjproject.yaml
+Patch0:     0009-add-config-site.patch
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(speex)
@@ -39,6 +40,8 @@ Development files for %{name}.
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
+# 0009-add-config-site.patch
+%patch0 -p1
 # >> setup
 # << setup
 
