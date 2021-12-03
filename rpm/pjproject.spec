@@ -54,14 +54,14 @@ Development files for %{name}.
 
 %configure --disable-static \
     --enable-shared \
+    --enable-pjsua2 \
     --enable-ssl \
     --enable-opus \
     --enable-libsamplerate \
     --disable-resample \
     --with-external-speex \
     --disable-libwebrtc \
-    CFLAGS="$CFLAGS -DNDEBUG=1" \
-    CFLAGS="$CFLAGS -DPJ_HAS_IPV6=1"
+    CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"
 
 
 # >> build post
@@ -72,10 +72,16 @@ make %{?_smp_mflags} lib
 %install
 rm -rf %{buildroot}
 # >> install pre
+find %{_builddir} -name "*.so.*"
 # << install pre
 
 # >> install post
+printf "PJ_EXCLUDE_PJSUA2 is '%s'\n" $PJ_EXCLUDE_PJSUA2
 %make_install
+# somehow that doesn't get installed...
+printf "manually installing pjsua2...\n"
+%__install -D pjsip/lib/libpjsua2.so.2 %{buildroot}%{_libdir}/libpjsua2.so.2
+find %{buildroot} -name "*.so.*"
 # << install post
 
 %post -p /sbin/ldconfig

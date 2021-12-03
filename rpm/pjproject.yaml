@@ -26,6 +26,8 @@ SetupOptions: '-q -n %{name}-%{version}/upstream'
 ConfigOptions:
     - '--enable-shared'
     # '--disable-video'
+    # jami-daemon links against libpjsua2
+    - '--enable-pjsua2'
     - '--enable-ssl'
     - '--enable-opus'
     - '--enable-libsamplerate'
@@ -38,8 +40,7 @@ ConfigOptions:
     # '--with-external-srtp'
     # '--with-external-webrtc'
     - '--disable-libwebrtc'
-    - 'CFLAGS="$CFLAGS -DNDEBUG=1"'
-    - 'CFLAGS="$CFLAGS -DPJ_HAS_IPV6=1"'
+    - 'CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"'
 Builder: none
 AutoSubPackages:
     - devel
