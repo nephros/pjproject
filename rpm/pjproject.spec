@@ -72,7 +72,7 @@ make %{?_smp_mflags} lib
 %install
 rm -rf %{buildroot}
 # >> install pre
-find %{_builddir} -name "*.so.*"
+find %{_builddir} -name "*.so*"
 # << install pre
 
 # >> install post
@@ -81,6 +81,7 @@ printf "PJ_EXCLUDE_PJSUA2 is '%s'\n" $PJ_EXCLUDE_PJSUA2
 # somehow that doesn't get installed...
 printf "manually installing pjsua2...\n"
 %__install -D pjsip/lib/libpjsua2.so.2 %{buildroot}%{_libdir}/libpjsua2.so.2
+%__install -D pjsip/lib/libpjsua2.so %{buildroot}%{_libdir}/libpjsua2.so
 find %{buildroot} -name "*.so.*"
 # << install post
 
