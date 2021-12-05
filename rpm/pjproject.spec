@@ -54,6 +54,7 @@ Development files for %{name}.
 
 %configure --disable-static \
     --enable-shared \
+    --enable-ext-sound \
     --enable-pjsua2 \
     --enable-ssl \
     --enable-opus \

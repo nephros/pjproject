@@ -26,6 +26,7 @@ SetupOptions: '-q -n %{name}-%{version}/upstream'
 ConfigOptions:
     - '--enable-shared'
     # '--disable-video'
+    - '--enable-ext-sound'
     # jami-daemon links against libpjsua2
     - '--enable-pjsua2'
     - '--enable-ssl'
