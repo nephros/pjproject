@@ -21,6 +21,7 @@ Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(speex)
 BuildRequires:  pkgconfig(speexdsp)
+BuildRequires:  pkgconfig(libsrtp2) = 2.3.0
 BuildRequires:  pkgconfig(openssl)
 BuildRequires:  pkgconfig(libssl)
 BuildRequires:  pkgconfig(libcrypto)
@@ -80,6 +81,7 @@ Development files for %{name}.
     --enable-libsamplerate \
     --disable-resample \
     --with-external-speex \
+    --with-external-srtp \
     --disable-libwebrtc \
     CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"
 

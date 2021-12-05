@@ -19,6 +19,7 @@ PkgBR:
 PkgConfigBR:
     - speex
     - speexdsp
+    - libsrtp2 = 2.3.0
     - openssl
     - libssl
     - libcrypto
@@ -77,7 +78,7 @@ ConfigOptions:
     # disable because of conflicts with the system versions
     # '--enable-speex'
     - '--with-external-speex'
-    # '--with-external-srtp'
+    - '--with-external-srtp'
     # '--with-external-webrtc'
     - '--disable-libwebrtc'
     - 'CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"'
