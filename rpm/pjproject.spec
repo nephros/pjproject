@@ -24,6 +24,7 @@ BuildRequires:  pkgconfig(speexdsp)
 BuildRequires:  pkgconfig(openssl) >= 1.1.1
 BuildRequires:  pkgconfig(libssl) >= 1.1.1
 BuildRequires:  pkgconfig(libcrypto) >= 1.1.1
+BuildRequires:  pkgconfig(libsrtp2) = 2.3.0
 BuildRequires:  pkgconfig(libresample)
 BuildRequires:  pkgconfig(samplerate)
 BuildRequires:  opus-devel
@@ -80,6 +81,7 @@ Development files for %{name}.
     --enable-libsamplerate \
     --disable-resample \
     --with-external-speex \
+    --with-external-srtp \
     --disable-libwebrtc \
     CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"
 

@@ -22,6 +22,7 @@ PkgConfigBR:
     - openssl >= 1.1.1
     - libssl >= 1.1.1
     - libcrypto >= 1.1.1
+    - libsrtp2 = 2.3.0
     - libresample
     - samplerate
 SetupOptions: '-q -n %{name}-%{version}/upstream'
@@ -77,7 +78,7 @@ ConfigOptions:
     # disable because of conflicts with the system versions
     # '--enable-speex'
     - '--with-external-speex'
-    # '--with-external-srtp'
+    - '--with-external-srtp'
     # '--with-external-webrtc'
     - '--disable-libwebrtc'
     - 'CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"'
