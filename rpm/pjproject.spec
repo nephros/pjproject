@@ -22,6 +22,8 @@ Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(speex)
 BuildRequires:  pkgconfig(speexdsp)
 BuildRequires:  pkgconfig(openssl)
+BuildRequires:  pkgconfig(libssl)
+BuildRequires:  pkgconfig(libcrypto)
 BuildRequires:  pkgconfig(libresample)
 BuildRequires:  pkgconfig(samplerate)
 BuildRequires:  opus-devel
@@ -54,7 +56,24 @@ Development files for %{name}.
 
 %configure --disable-static \
     --enable-shared \
+    --enable-video \
     --enable-ext-sound \
+    --disable-speex-aec \
+    --disable-g711-codec \
+    --disable-l16-codec \
+    --disable-gsm-codec \
+    --disable-g722-codec \
+    --disable-g7221-codec \
+    --disable-speex-codec \
+    --disable-ilbc-codec \
+    --disable-opencore-amr \
+    --disable-silk \
+    --disable-sdl \
+    --disable-ffmpeg \
+    --disable-v4l2 \
+    --disable-openh264 \
+    --disable-resample \
+    --disable-libwebrtc \
     --enable-pjsua2 \
     --enable-ssl \
     --enable-opus \

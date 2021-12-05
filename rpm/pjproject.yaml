@@ -20,13 +20,52 @@ PkgConfigBR:
     - speex
     - speexdsp
     - openssl
+    - libssl
+    - libcrypto
     - libresample
     - samplerate
 SetupOptions: '-q -n %{name}-%{version}/upstream'
+# jami-daemon has this:
+##--disable-sound        \
+#                     --enable-video         \
+#                     --enable-ext-sound     \
+#                     --disable-speex-aec    \
+#                     --disable-g711-codec   \
+#                     --disable-l16-codec    \
+#                     --disable-gsm-codec    \
+#                     --disable-g722-codec   \
+#                     --disable-g7221-codec  \
+#                     --disable-speex-codec  \
+#                     --disable-ilbc-codec   \
+#                     --disable-opencore-amr \
+#                     --disable-silk         \
+#                     --disable-sdl          \
+#                     --disable-ffmpeg       \
+#                     --disable-v4l2         \
+#                     --disable-openh264     \
+#                     --disable-resample     \
+#                     --disable-libwebrtc    \
+#                     --with-gnutls=$(PREFIX)
 ConfigOptions:
     - '--enable-shared'
-    # '--disable-video'
+    - '--enable-video'
     - '--enable-ext-sound'
+    - '--disable-speex-aec'
+    - '--disable-g711-codec'
+    - '--disable-l16-codec'
+    - '--disable-gsm-codec'
+    - '--disable-g722-codec'
+    - '--disable-g7221-codec'
+    - '--disable-speex-codec'
+    - '--disable-ilbc-codec'
+    - '--disable-opencore-amr'
+    - '--disable-silk'
+    - '--disable-sdl'
+    - '--disable-ffmpeg'
+    - '--disable-v4l2'
+    - '--disable-openh264'
+    - '--disable-resample'
+    - '--disable-libwebrtc'
     # jami-daemon links against libpjsua2
     - '--enable-pjsua2'
     - '--enable-ssl'
