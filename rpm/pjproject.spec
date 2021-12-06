@@ -73,12 +73,11 @@ Development files for %{name}.
     --disable-ffmpeg \
     --disable-v4l2 \
     --disable-openh264 \
-    --disable-resample \
     --disable-libwebrtc \
     --enable-pjsua2 \
     --enable-ssl \
     --enable-opus \
-    --enable-libsamplerate \
+    --disable-libsamplerate \
     --disable-resample \
     --with-external-speex \
     --with-external-srtp \
