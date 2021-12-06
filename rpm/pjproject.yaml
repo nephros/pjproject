@@ -19,9 +19,9 @@ PkgBR:
 PkgConfigBR:
     - speex
     - speexdsp
-    - openssl
-    - libssl
-    - libcrypto
+    - openssl >= 1.1.1
+    - libssl >= 1.1.1
+    - libcrypto >= 1.1.1
     - libresample
     - samplerate
 SetupOptions: '-q -n %{name}-%{version}/upstream'
