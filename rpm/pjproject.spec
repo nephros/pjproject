@@ -21,10 +21,10 @@ Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(speex)
 BuildRequires:  pkgconfig(speexdsp)
+BuildRequires:  pkgconfig(libsrtp2) = 2.3.0
 BuildRequires:  pkgconfig(openssl) >= 1.1.1
 BuildRequires:  pkgconfig(libssl) >= 1.1.1
 BuildRequires:  pkgconfig(libcrypto) >= 1.1.1
-BuildRequires:  pkgconfig(libsrtp2) = 2.3.0
 BuildRequires:  pkgconfig(libresample)
 BuildRequires:  pkgconfig(samplerate)
 BuildRequires:  opus-devel

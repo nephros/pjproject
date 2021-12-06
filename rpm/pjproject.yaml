@@ -19,10 +19,10 @@ PkgBR:
 PkgConfigBR:
     - speex
     - speexdsp
+    - libsrtp2 = 2.3.0
     - openssl >= 1.1.1
     - libssl >= 1.1.1
     - libcrypto >= 1.1.1
-    - libsrtp2 = 2.3.0
     - libresample
     - samplerate
 SetupOptions: '-q -n %{name}-%{version}/upstream'
