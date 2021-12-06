@@ -21,7 +21,6 @@ Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(speex)
 BuildRequires:  pkgconfig(speexdsp)
-BuildRequires:  pkgconfig(libsrtp2) = 2.3.0
 BuildRequires:  pkgconfig(openssl) >= 1.1.1
 BuildRequires:  pkgconfig(libssl) >= 1.1.1
 BuildRequires:  pkgconfig(libcrypto) >= 1.1.1
@@ -65,7 +64,6 @@ Development files for %{name}.
     --disable-gsm-codec \
     --disable-g722-codec \
     --disable-g7221-codec \
-    --disable-speex-codec \
     --disable-ilbc-codec \
     --disable-opencore-amr \
     --disable-silk \
@@ -73,16 +71,14 @@ Development files for %{name}.
     --disable-ffmpeg \
     --disable-v4l2 \
     --disable-openh264 \
-    --disable-resample \
     --disable-libwebrtc \
     --enable-pjsua2 \
     --enable-ssl \
     --enable-opus \
-    --enable-libsamplerate \
+    --disable-libsamplerate \
     --disable-resample \
     --with-external-speex \
     --with-external-srtp \
-    --disable-libwebrtc \
     CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"
 
 

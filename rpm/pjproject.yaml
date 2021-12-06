@@ -19,7 +19,7 @@ PkgBR:
 PkgConfigBR:
     - speex
     - speexdsp
-    - libsrtp2 = 2.3.0
+    # libsrtp2 = 2.3.0
     - openssl >= 1.1.1
     - libssl >= 1.1.1
     - libcrypto >= 1.1.1
@@ -57,7 +57,6 @@ ConfigOptions:
     - '--disable-gsm-codec'
     - '--disable-g722-codec'
     - '--disable-g7221-codec'
-    - '--disable-speex-codec'
     - '--disable-ilbc-codec'
     - '--disable-opencore-amr'
     - '--disable-silk'
@@ -65,13 +64,13 @@ ConfigOptions:
     - '--disable-ffmpeg'
     - '--disable-v4l2'
     - '--disable-openh264'
-    - '--disable-resample'
     - '--disable-libwebrtc'
     # jami-daemon links against libpjsua2
     - '--enable-pjsua2'
     - '--enable-ssl'
     - '--enable-opus'
-    - '--enable-libsamplerate'
+    # if enabled may lead to libpjmedia.so: undefined reference to `src_process'
+    - '--disable-libsamplerate'
     # '--enable-resample-dll'
     # '--enable-resample'
     - '--disable-resample'
@@ -80,7 +79,6 @@ ConfigOptions:
     - '--with-external-speex'
     - '--with-external-srtp'
     # '--with-external-webrtc'
-    - '--disable-libwebrtc'
     - 'CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"'
 Builder: none
 AutoSubPackages:
