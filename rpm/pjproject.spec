@@ -43,6 +43,8 @@ Development files for %{name}.
 # 0009-add-config-site.patch
 %patch0 -p1
 # >> setup
+echo "#define PJSIP_HAS_TLS_TRANSPORT 1" >> pjlib/include/pj/config_site.h
+
 # << setup
 
 %build
@@ -71,7 +73,6 @@ Development files for %{name}.
     --disable-openh264 \
     --disable-libwebrtc \
     --enable-pjsua2 \
-    --disable-ssl \
     --enable-opus \
     --disable-libsamplerate \
     --disable-resample \

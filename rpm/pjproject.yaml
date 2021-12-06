@@ -68,7 +68,8 @@ ConfigOptions:
     - '--disable-libwebrtc'
     # jami-daemon links against libpjsua2
     - '--enable-pjsua2'
-    - '--disable-ssl'
+    # '--disable-ssl'
+    # '--disable-tls'
     - '--enable-opus'
     # if enabled may lead to libpjmedia.so: undefined reference to `src_process'
     - '--disable-libsamplerate'
