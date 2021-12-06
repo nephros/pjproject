@@ -76,7 +76,6 @@ Development files for %{name}.
     --disable-libsamplerate \
     --disable-resample \
     --with-external-speex \
-    --with-external-srtp \
     --with-gnutls \
     CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"
 

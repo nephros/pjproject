@@ -78,7 +78,7 @@ ConfigOptions:
     # disable because of conflicts with the system versions
     # '--enable-speex'
     - '--with-external-speex'
-    - '--with-external-srtp'
+    # '--with-external-srtp'
     # '--with-external-webrtc'
     - '--with-gnutls'
     - 'CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"'
