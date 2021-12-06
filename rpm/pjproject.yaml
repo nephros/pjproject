@@ -20,9 +20,10 @@ PkgConfigBR:
     - speex
     - speexdsp
     # libsrtp2 = 2.3.0
-    - openssl >= 1.1.1
-    - libssl >= 1.1.1
-    - libcrypto >= 1.1.1
+    # openssl >= 1.1.1
+    # libssl >= 1.1.1
+    # libcrypto >= 1.1.1
+    - gnutls = 3.6.7
     - libresample
     - samplerate
 SetupOptions: '-q -n %{name}-%{version}/upstream'
@@ -67,7 +68,7 @@ ConfigOptions:
     - '--disable-libwebrtc'
     # jami-daemon links against libpjsua2
     - '--enable-pjsua2'
-    - '--enable-ssl'
+    - '--disable-ssl'
     - '--enable-opus'
     # if enabled may lead to libpjmedia.so: undefined reference to `src_process'
     - '--disable-libsamplerate'
@@ -79,6 +80,7 @@ ConfigOptions:
     - '--with-external-speex'
     - '--with-external-srtp'
     # '--with-external-webrtc'
+    - '--with gnutls'
     - 'CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"'
 Builder: none
 AutoSubPackages:

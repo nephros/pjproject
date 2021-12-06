@@ -21,9 +21,7 @@ Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(speex)
 BuildRequires:  pkgconfig(speexdsp)
-BuildRequires:  pkgconfig(openssl) >= 1.1.1
-BuildRequires:  pkgconfig(libssl) >= 1.1.1
-BuildRequires:  pkgconfig(libcrypto) >= 1.1.1
+BuildRequires:  pkgconfig(gnutls) = 3.6.7
 BuildRequires:  pkgconfig(libresample)
 BuildRequires:  pkgconfig(samplerate)
 BuildRequires:  opus-devel
@@ -73,12 +71,13 @@ Development files for %{name}.
     --disable-openh264 \
     --disable-libwebrtc \
     --enable-pjsua2 \
-    --enable-ssl \
+    --disable-ssl \
     --enable-opus \
     --disable-libsamplerate \
     --disable-resample \
     --with-external-speex \
     --with-external-srtp \
+    --with gnutls \
     CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"
 
 
