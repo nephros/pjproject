@@ -26,6 +26,7 @@ PkgConfigBR:
     - gnutls = 3.6.7
     - libresample
     - samplerate
+    - webrtc-audio-processing
 SetupOptions: '-q -n %{name}-%{version}/upstream'
 # jami-daemon has this:
 ##--disable-sound        \
@@ -65,6 +66,7 @@ ConfigOptions:
     - '--disable-ffmpeg'
     - '--disable-v4l2'
     - '--disable-openh264'
+    # fails to build, needs "emmintrin.h"
     - '--disable-libwebrtc'
     # jami-daemon links against libpjsua2
     - '--enable-pjsua2'
@@ -80,6 +82,7 @@ ConfigOptions:
     # '--enable-speex'
     - '--with-external-speex'
     # '--with-external-srtp'
+    # apparently the audio-processing version is not webrtc...
     # '--with-external-webrtc'
     - '--with-gnutls'
     - 'CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"'
