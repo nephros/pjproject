@@ -26,6 +26,7 @@ PkgConfigBR:
     - gnutls = 3.6.7
     - libresample
     - samplerate
+    - webrtc-audio-processing
 SetupOptions: '-q -n %{name}-%{version}/upstream'
 # jami-daemon has this:
 ##--disable-sound        \
@@ -80,7 +81,7 @@ ConfigOptions:
     # '--enable-speex'
     - '--with-external-speex'
     # '--with-external-srtp'
-    # '--with-external-webrtc'
+    - '--with-external-webrtc'
     - '--with-gnutls'
     - 'CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"'
 Builder: none

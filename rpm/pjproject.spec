@@ -24,6 +24,7 @@ BuildRequires:  pkgconfig(speexdsp)
 BuildRequires:  pkgconfig(gnutls) = 3.6.7
 BuildRequires:  pkgconfig(libresample)
 BuildRequires:  pkgconfig(samplerate)
+BuildRequires:  pkgconfig(webrtc-audio-processing)
 BuildRequires:  opus-devel
 
 %description
@@ -77,6 +78,7 @@ echo "#define PJSIP_HAS_TLS_TRANSPORT 1" >> pjlib/include/pj/config_site.h
     --disable-libsamplerate \
     --disable-resample \
     --with-external-speex \
+    --with-external-webrtc \
     --with-gnutls \
     CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"
 
