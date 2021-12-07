@@ -21,7 +21,8 @@ Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(speex)
 BuildRequires:  pkgconfig(speexdsp)
-BuildRequires:  pkgconfig(gnutls) = 3.6.7
+BuildRequires:  pkgconfig(gnutls) >= 3.6.7
+BuildRequires:  pkgconfig(gnutls) <= 3.7
 BuildRequires:  pkgconfig(libresample)
 BuildRequires:  pkgconfig(samplerate)
 BuildRequires:  pkgconfig(webrtc-audio-processing)
