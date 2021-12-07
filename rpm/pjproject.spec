@@ -72,13 +72,11 @@ echo "#define PJSIP_HAS_TLS_TRANSPORT 1" >> pjlib/include/pj/config_site.h
     --disable-ffmpeg \
     --disable-v4l2 \
     --disable-openh264 \
-    --disable-libwebrtc \
     --enable-pjsua2 \
     --enable-opus \
     --disable-libsamplerate \
     --disable-resample \
     --with-external-speex \
-    --with-external-webrtc \
     --with-gnutls \
     CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"
 

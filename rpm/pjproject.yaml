@@ -66,7 +66,7 @@ ConfigOptions:
     - '--disable-ffmpeg'
     - '--disable-v4l2'
     - '--disable-openh264'
-    - '--disable-libwebrtc'
+    # '--disable-libwebrtc'
     # jami-daemon links against libpjsua2
     - '--enable-pjsua2'
     # '--disable-ssl'
@@ -81,7 +81,8 @@ ConfigOptions:
     # '--enable-speex'
     - '--with-external-speex'
     # '--with-external-srtp'
-    - '--with-external-webrtc'
+    # apparently the audio-processing version is not webrtc...
+    # '--with-external-webrtc'
     - '--with-gnutls'
     - 'CFLAGS="$CFLAGS -DNDEBUG=1 -DPJ_HAS_IPV6=1"'
 Builder: none
