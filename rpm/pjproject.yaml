@@ -76,8 +76,8 @@ ConfigOptions:
     # if enabled may lead to libpjmedia.so: undefined reference to `src_process'
     - '--disable-libsamplerate'
     # '--enable-resample-dll'
-    # '--enable-resample'
-    - '--disable-resample'
+    - '--enable-resample'
+    # '--disable-resample'
     # disable because of conflicts with the system versions
     # '--enable-speex'
     - '--with-external-speex'
