@@ -72,6 +72,7 @@ echo "#define PJSIP_HAS_TLS_TRANSPORT 1" >> pjlib/include/pj/config_site.h
     --disable-ffmpeg \
     --disable-v4l2 \
     --disable-openh264 \
+    --disable-libwebrtc \
     --enable-pjsua2 \
     --enable-opus \
     --disable-libsamplerate \

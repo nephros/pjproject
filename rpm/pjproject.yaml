@@ -66,7 +66,8 @@ ConfigOptions:
     - '--disable-ffmpeg'
     - '--disable-v4l2'
     - '--disable-openh264'
-    # '--disable-libwebrtc'
+    # fails to build, needs "emmintrin.h"
+    - '--disable-libwebrtc'
     # jami-daemon links against libpjsua2
     - '--enable-pjsua2'
     # '--disable-ssl'
