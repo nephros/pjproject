@@ -23,7 +23,8 @@ PkgConfigBR:
     # openssl >= 1.1.1
     # libssl >= 1.1.1
     # libcrypto >= 1.1.1
-    - gnutls = 3.6.7
+    - gnutls >= 3.6.7
+    - gnutls <= 3.7
     - libresample
     - samplerate
     - webrtc-audio-processing
